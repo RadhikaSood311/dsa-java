@@ -21,8 +21,10 @@ public class Transversal {
         a.left=b;a.right=c;
         b.left=d;b.right=e;
         c.left=f;c.right=g;
-        display(a);
-        System.out.println(size(a));
+//        display(a);
+//        System.out.println(size(a));
+//        System.out.println();
+        System.out.println(product(a));
 
     }
     public static void display(Node root){
@@ -30,10 +32,16 @@ public class Transversal {
         System.out.println(root.val);
         display(root.left);
         display(root.right);
+
     }
     public static int size(Node root){
         if(root==null) return 0;
         return 1+size(root.left)+size(root.right);
+    }
+    public static int product(Node root){
+        if (root == null) return 1;
+        return root.val * product(root.left) * product(root.right);
+
     }
 
 
